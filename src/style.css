@@ -1,6 +1,6 @@
 body {
 	width: 340px;
-	background-color: #1e8def;
+	background-color: #f9a13f;
     color: white;
     box-sizing: border-box;
     padding: 10px;
@@ -65,7 +65,7 @@ body {
 } 
 
 .selected {
-	background-color: #dc82ff;
+	background-color: #4b4c53;
 	color: #fff;
 }
 

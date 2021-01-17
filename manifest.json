@@ -1,20 +1,18 @@
 {
-  "name": "Ethereum Gas Price Extension",
-  "version": "1.10",
-  "description": "Displays the current gas price using your preferred gas price provider.",
+  "name": "BTC mempool fees Extension",
+  "version": "1.0",
+  "description": "Displays the current mempool fees price using your preferred mempool fees provider.",
   "manifest_version": 2,
   "background": {
     "page": "src/background.html",
     "persistent": false
   },
-  "icons": { 
-    "16": "static/icon16.png",
-    "48": "static/icon48.png",
-    "128": "static/icon128.png" 
+  "icons": {
+    "128": "static/Bitcoin.png"
   },
   "browser_action": {
-    "default_icon": "static/icon.png",
-    "default_title": "Ethereum Gas Price",
+    "default_icon": "static/Bitcoin.png",
+    "default_title": "BTC mempool fees",
     "default_popup": "src/popup.html"
   },
   "permissions": [
