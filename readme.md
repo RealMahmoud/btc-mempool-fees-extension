@@ -1,4 +1,4 @@
-# Ethereum Gas Price Extension
+# BTC mempool fees Extension
 Displays the latest btc mempool fees
 
 ## Donating
