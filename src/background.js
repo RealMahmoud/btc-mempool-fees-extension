@@ -83,11 +83,11 @@ function parseApiData(apiData, provider) {
   if (provider === "bitcoiner.live") {
     return {
       "slow": {
-        "satVb": parseInt(apiData.estimates["120"].sat_per_vbyte),
+        "satVb": parseInt(apiData.estimates["1440"].sat_per_vbyte),
         "wait": "Low priority"
       },
       "standard": {
-        "satVb": parseInt(apiData.estimates["60"].sat_per_vbyte),
+        "satVb": parseInt(apiData.estimates["180"].sat_per_vbyte),
         "wait": "Medium priority"
       },
       "fast": {
