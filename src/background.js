@@ -23,14 +23,14 @@ function updateBadge() {
 
 function getProviderUrl(provider) {
   switch (provider) {
-    case 'mempoolspace':
+    case 'mempool.space':
       return "https://mempool.space/api/v1/fees/recommended";
       break;
-    case 'bitcoinfees':
-      return "https://bitcoinfees.earn.com/api/v1/fees/recommended";
+    case 'bitcoiner.live':
+      return "https://bitcoiner.live/api/fees/estimates/latest";
       break;
-    case 'blockchaininfo':
-      return "https://api.blockchain.info/mempool/fees";
+    case 'blockchain.com':
+      return "https://api.blockchain.com/mempool/fees";
       break;
   }
 }
@@ -38,7 +38,7 @@ function getProviderUrl(provider) {
 function fetchGasPrice() {
   return new Promise((resolve, reject) => {
     chrome.storage.sync.get({
-      provider: "mempoolspace",
+      provider: "mempool.space",
     }, function (items) {
       const url = getProviderUrl(items.provider);
 
@@ -63,7 +63,7 @@ function fetchGasPrice() {
 
 // Create a consistent structure for data so we can use multiple providers
 function parseApiData(apiData, provider) {
-  if (provider === "mempoolspace") {
+  if (provider === "mempool.space") {
     return {
       "slow": {
         "satVb": parseInt(apiData.hourFee),
@@ -80,24 +80,24 @@ function parseApiData(apiData, provider) {
     }
   }
 
-  if (provider === "bitcoinfees") {
+  if (provider === "bitcoiner.live") {
     return {
       "slow": {
-        "satVb": parseInt(apiData.hourFee),
+        "satVb": parseInt(apiData.estimates["120"].sat_per_vbyte),
         "wait": "Low priority"
       },
       "standard": {
-        "satVb": parseInt(apiData.halfHourFee),
+        "satVb": parseInt(apiData.estimates["60"].sat_per_vbyte),
         "wait": "Medium priority"
       },
       "fast": {
-        "satVb": parseInt(apiData.fastestFee),
+        "satVb": parseInt(apiData.estimates["30"].sat_per_vbyte),
         "wait": "High priority"
       }
     }
   }
 
-  if (provider === "blockchaininfo") {
+  if (provider === "blockchain.com") {
     return {
       "slow": {
         "satVb": parseInt(apiData.limits.min),

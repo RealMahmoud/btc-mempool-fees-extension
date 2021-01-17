@@ -3,7 +3,7 @@ const options = {
 };
 
 chrome.storage.sync.get({
-  'provider': 'mempoolspace'
+  'provider': 'mempool.space'
 }, (items)=>{
   options.provider = items.provider;
   renderOptions();
@@ -11,9 +11,9 @@ chrome.storage.sync.get({
 
 function renderOptions(){
   let providersHtml = 
-    `<li data-provider="mempoolspace" class="js-provider ${options.provider == 'mempoolspace' ? 'active':''}">Mempool Space ${options.provider == 'mempoolspace' ? '✓':''}</li>
-    <li data-provider="bitcoinfees" class="js-provider ${options.provider == 'bitcoinfees' ? 'active':''}">bitcoin fees ${options.provider == 'bitcoinfees' ? '✓':''}</li>
-    <li data-provider="blockchaininfo" class="js-provider ${options.provider == 'blockchaininfo' ? 'active':''}">blockchain info ${options.provider == 'blockchaininfo' ? '✓':''}</li>`;
+    `<li data-provider="mempool.space" class="js-provider ${options.provider == 'mempool.space' ? 'active':''}">mempool.space ${options.provider == 'mempool.space' ? '✓':''}</li>
+    <li data-provider="bitcoiner.live" class="js-provider ${options.provider == 'bitcoiner.live' ? 'active':''}">bitcoiner.live ${options.provider == 'bitcoiner.live' ? '✓':''}</li>
+    <li data-provider="blockchain.com" class="js-provider ${options.provider == 'blockchain.com' ? 'active':''}">blockchain.com ${options.provider == 'blockchain.com' ? '✓':''}</li>`;
 
   document.getElementsByClassName('js-providers')[0].innerHTML = DOMPurify.sanitize(providersHtml);
   addClickListeners();
