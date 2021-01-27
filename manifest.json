@@ -1,6 +1,6 @@
 {
   "name": "BTC mempool fees Extension",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Displays the current mempool fees price using your preferred mempool fees provider.",
   "manifest_version": 2,
   "background": {
@@ -8,7 +8,7 @@
     "persistent": false
   },
   "icons": {
-    "128": "static/Bitcoin.png"
+    "64": "static/Bitcoin.png"
   },
   "browser_action": {
     "default_icon": "static/Bitcoin.png",
@@ -19,6 +19,12 @@
     "alarms",
     "storage"
   ],
+  "applications": {
+    "gecko": {
+      "id": "{5090ef94-9d8b-45ee-a331-795973b87584}",
+      "strict_min_version": "57.0"
+    }
+  },
   "options_ui": {
     "page": "src/options.html",
     "open_in_tab": true
