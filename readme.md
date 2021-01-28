@@ -2,4 +2,4 @@
 Displays the latest btc mempool fees
 
 ## Donating
-If you found this extension useful, please consider [donating](https://etherscan.io/address/0x869Fa4CACA1f74FE20E5d95CBB95D63bF58A3cC2).
+If you found this extension useful, please consider [donating](https://blockchair.com/bitcoin/address/bc1qx6ktcxmk94xy9v9v9vfmr7e432nr8t5gmahclk).
